@@ -1,180 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shreyal Y Bangera - Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Roboto', sans-serif; scroll-behavior: smooth; transition: background 0.3s, color 0.3s; }
-body { line-height: 1.6; padding-top: 60px; background:#121212; color:#eee; }
-nav { position: fixed; top: 0; width: 100%; background: linear-gradient(to right, #E6E6FA, #D8BFD8); z-index: 1000; display: flex; justify-content: center; padding: 10px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.2);}
-nav a { color: #111; margin: 0 15px; text-decoration: none; font-weight: 500; transition: color 0.3s; }
-nav a:hover { color: #7A5DC7; text-decoration: underline; }
-.mode-toggle { position: fixed; right: 20px; top: 10px; background: #9370DB; color: #fff; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; z-index:1001; }
-
-/* Header banner */
-header {
-  background-color: #111; /* black banner */
-  color: #E6E6FA; /* light lavender for text */
-  padding: 80px 20px 60px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  animation: fadeIn 1.5s ease-in;
-}
-header h1 {
-  color: #9370DB; /* purple name */
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-header p { color: #E6E6FA; }
-
-.resume-btn { margin-top: 15px; background: #9370DB; color: #E6E6FA; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; }
-.resume-btn:hover { background: #7A5DC7; }
-
-section { max-width: 1000px; margin: 40px auto; padding: 0 20px; opacity: 0; transform: translateY(50px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; border-radius: 10px; }
-section.visible { opacity: 1; transform: translateY(0); }
-
-h2 { color: #9370DB; margin-bottom: 20px; border-bottom: 2px solid #9370DB; display: inline-block; padding-bottom: 5px; }
-
-ul { list-style-type: none; }
-li { margin-bottom: 10px; display:flex; align-items:center; gap:10px; font-size:18px; }
-
-.project { background: #E6E6FA; color: #111; padding: 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
-.project:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.2); }
-.project button { background: #9370DB; color: #E6E6FA; border: none; padding: 8px 12px; margin-top: 10px; border-radius: 5px; cursor: pointer; }
-.project button:hover { background: #7A5DC7; }
-
-/* Skills section banner */
-#skills {
-  background-color: #111; /* black banner */
-  padding: 40px 20px;
-  color: #E6E6FA; /* light lavender text */
-}
-
-/* Modal */
-.modal { display: none; position: fixed; z-index: 1002; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7); }
-.modal-content { background: #E6E6FA; color: #111; margin: 10% auto; padding: 20px; border-radius: 10px; max-width: 600px; position: relative; }
-.close { position: absolute; top: 10px; right: 20px; color: #111; font-size: 24px; font-weight: bold; cursor: pointer; }
-
-/* Footer */
-footer { text-align: center; padding: 20px; background: #E6E6FA; color: #111; margin-top: 40px; }
-
-body.light-mode { background: #f5f5f5; color: #222; }
-body.light-mode header, body.light-mode #skills, body.light-mode .project, body.light-mode footer { background: #E6E6FA; color:#111; }
-
-/* Animations */
-@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
-@keyframes fadeInUp { from {opacity:0; transform: translateY(20px);} to {opacity:1; transform: translateY(0);} }
-
-/* Responsive */
-@media(max-width:768px){ header h1{font-size:2.2rem;} header p{font-size:1rem;} .resume-btn{padding:10px 20px;} ul li{font-size:16px;} }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shreyal Y Bangera | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: #161b22;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #00ff88;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #8b949e;
+    }
+    nav a {
+      color: #00ff88;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    h2 {
+      border-bottom: 2px solid #00ff88;
+      padding-bottom: 5px;
+      margin-bottom: 1rem;
+      color: #00ff88;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      margin-bottom: 0.6rem;
+    }
+    .project, .internship {
+      background: #161b22;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+    .project a {
+      color: #58a6ff;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #161b22;
+      font-size: 0.9rem;
+      color: #8b949e;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      background: #00ff88;
+      color: #0d1117;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
 </head>
-<body class="dark-mode">
-
-<button class="mode-toggle" onclick="toggleMode()">Dark/Light Mode</button>
-
-<nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-</nav>
-
-<header>
+<body>
+  <header>
     <h1>Shreyal Y Bangera</h1>
-    <p>Full Stack Developer | Cybersecurity & Data Analytics Enthusiast</p>
-    <p>Mangalore, India | shreyalybangera123@gmail.com | +91-8884459572</p>
-    <a href="Shreyal_Bangera_Resume.pdf" download><button class="resume-btn">Download Resume</button></a>
-</header>
+    <p>MCA Student | Aspiring Cybersecurity Engineer | Python & Networking Enthusiast</p>
+    <nav>
+      <a href="#about">About</a> |
+      <a href="#projects">Projects</a> |
+      <a href="#internship">Internship</a> |
+      <a href="#skills">Skills</a> |
+      <a href="#certifications">Certifications</a> |
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<section id="about">
+  <section id="about">
     <h2>About Me</h2>
-    <p>Final-year MCA student with a commerce background and strong foundations in computer applications. Skilled in Java Spring Boot, full-stack development, cybersecurity, and data analytics. Passionate about building secure, scalable, and reliable systems combining technical expertise with financial understanding.</p>
-</section>
+    <p>Final-year MCA student at NMAMIT with strong foundations in Python, Networking, and Cybersecurity. Experienced in secure system development, activity monitoring, and vulnerability testing. Currently interning as a Cybersecurity Intern at <b>Redynox Technologies</b>.</p>
+  </section>
 
-<section id="skills">
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>User Activity Monitoring System (MERN)</h3>
+      <p>Secure system to log user login/logout activities with IP tracking and JWT authentication.</p>
+      <a href="https://github.com/ShreyalBangera/User-Activity-monitor" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project">
+      <h3>Encrypted Chat Application (Python, AES/RSA)</h3>
+      <p>Client-server chat app with socket programming and end-to-end encryption for secure communication.</p>
+    </div>
+    <div class="project">
+      <h3>Port Scanner with DB Logging (Python, SQLite)</h3>
+      <p>Network scanner that detects open ports and stores results in a database for security analysis.</p>
+    </div>
+  </section>
+
+  <section id="internship">
+    <h2>Internship Experience</h2>
+    <div class="internship">
+      <h3>Cybersecurity Intern – Redynox Technologies</h3>
+      <ul>
+        <li>Performed vulnerability testing with OWASP ZAP and WebGoat.</li>
+        <li>Analyzed traffic with Wireshark, documented key findings.</li>
+        <li>Hands-on exposure to penetration testing basics.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="skills">
     <h2>Technical Skills</h2>
     <ul>
-        <li><i class="fa-brands fa-java"></i> Java</li>
-        <li><i class="fa-brands fa-python"></i> Python</li>
-        <li><i class="fa-solid fa-code"></i> C / C++</li>
-        <li><i class="fa-solid fa-cogs"></i> Spring Boot</li>
-        <li><i class="fa-brands fa-react"></i> React.js / MERN Stack</li>
-        <li><i class="fa-brands fa-node-js"></i> Node.js / Express.js</li>
-        <li><i class="fa-solid fa-database"></i> SQL / PostgreSQL / MongoDB</li>
-        <li><i class="fa-brands fa-docker"></i> Docker</li>
-        <li><i class="fa-brands fa-aws"></i> AWS</li>
-        <li><i class="fa-solid fa-lightbulb"></i> OOP / Data Structures / Algorithms / Microservices</li>
+      <li><b>Languages:</b> Python, Java, JavaScript, SQL, C, Dart</li>
+      <li><b>Frameworks:</b> Node.js, Express.js, React.js, Spring Boot</li>
+      <li><b>Databases:</b> MySQL, PostgreSQL, MongoDB, SQLite</li>
+      <li><b>Security Tools:</b> Wireshark, OWASP ZAP, WebGoat, PyCryptodome</li>
+      <li><b>Concepts:</b> Networking, Cryptography, IAM (AWS, Okta, Ping Identity)</li>
     </ul>
-</section>
+  </section>
 
-<section id="projects">
-    <h2>Projects</h2>
-    <div class="project"><h3>Smart Resource Management System (SRMS)</h3><p><strong>Tech Stack:</strong> Java Spring Boot, PostgreSQL, MongoDB, Docker, AWS</p><button onclick="openModal('SRMS')">View Details</button></div>
-    <div class="project"><h3>Vendor Management Portal</h3><p><strong>Tech Stack:</strong> Flutter, MySQL</p><button onclick="openModal('Vendor')">View Details</button></div>
-    <div class="project"><h3>User Activity Monitoring System (UAM)</h3><p><strong>Tech Stack:</strong> MERN Stack</p><button onclick="openModal('UAM')">View Details</button></div>
-    <div class="project"><h3>Workstation Auto-Launcher</h3><p><strong>Tech Stack:</strong> Python</p><button onclick="openModal('Workstation')">View Details</button></div>
-</section>
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <ul>
+      <li>Cybersecurity – Deloitte Australia</li>
+      <li>Cybersecurity Job Simulation – AIG</li>
+    </ul>
+  </section>
 
-<div id="projectModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <h3 id="modalTitle"></h3>
-    <p id="modalContent"></p>
-    <button onclick="window.open('https://github.com/ShreyalBangera', '_blank')">View on GitHub</button>
-  </div>
-</div>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:shreyalybangera123@gmail.com">shreyalybangera123@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/shreyal-y-bangera" target="_blank">linkedin.com/in/shreyal-y-bangera</a></p>
+    <p>GitHub: <a href="https://github.com/ShreyalBangera" target="_blank">github.com/ShreyalBangera</a></p>
+    <a class="btn" href="Shreyal_Y_Bangera_Resume.pdf" target="_blank">Download Resume</a>
+  </section>
 
-<section id="education">
-<h2>Education</h2>
-<ul>
-<li>NMAM Institute of Technology, Nitte – MCA (CGPA: 9.19/10) | 2024–2026</li>
-<li>Govinda Dasa College, Surathkal – B.Com in Computer Applications (CGPA: 9.5/10) | 2021–2024</li>
-</ul>
-</section>
-
-<section id="contact">
-<h2>Contact</h2>
-<p>Email: shreyalybangera123@gmail.com</p>
-<p>Phone: +91-8884459572</p>
-<p><a href="https://linkedin.com/in/shreyal-y-bangera" target="_blank">LinkedIn</a> | <a href="https://github.com/ShreyalBangera" target="_blank">GitHub</a></p>
-</section>
-
-<footer>&copy; 2025 Shreyal Y Bangera. All rights reserved.</footer>
-
-<script>
-function toggleMode(){document.body.classList.toggle('light-mode');}
-
-// Fade-in sections
-const sections=document.querySelectorAll('section');
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');}});
-},{threshold:0.2});
-sections.forEach(section=>observer.observe(section));
-
-// Modal
-const projectDetails={
-SRMS:"Developed a scalable microservices-based backend using Java Spring Boot, PostgreSQL, MongoDB, Docker, AWS. Implemented JWT/OAuth2 authentication, automated CI/CD, and unit testing with JUnit & Mockito.",
-Vendor:"Built a mobile app to manage vendors, track orders, update ratings, and store product histories using Flutter and MySQL.",
-UAM:"Developed a secure login/logout monitoring system with JWT, Node.js/Express backend, React frontend, MongoDB analytics, and role-based access.",
-Workstation:"Created a Python automation tool that opens project folders, websites, and frequently used tools on system startup."
-};
-
-function openModal(project){
-document.getElementById('projectModal').style.display='block';
-document.getElementById('modalTitle').innerText=project;
-document.getElementById('modalContent').innerText=projectDetails[project];
-}
-function closeModal(){document.getElementById('projectModal').style.display='none';}
-window.onclick=function(event){if(event.target==document.getElementById('projectModal')){closeModal();}}
-</script>
-
+  <footer>
+    &copy; 2025 Shreyal Y Bangera | Portfolio
+  </footer>
 </body>
 </html>
