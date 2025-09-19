@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shreyal Y Bangera - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+      }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .magic-border {
+        position: relative;
+        overflow: hidden;
+      }
+      .magic-border::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+      .magic-border:hover::before {
+        left: 100%;
+      }
+      .particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        animation: float 6s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+      .hero-bg {
+        background: linear-gradient(
+            135deg,
+            rgba(102, 126, 234, 0.8),
+            rgba(118, 75, 162, 0.8)
+          ),
+          url("https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")
+            no-repeat center center;
+        background-size: cover;
+      }
+      nav {
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.1);
+      }
+    </style>
+  </head>
+  <body class="text-white">
+    <div id="particles" class="fixed inset-0 pointer-events-none z-0"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 py-4 px-5">
+      <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Shreyal Y Bangera</h1>
+        <ul class="hidden md:flex space-x-6">
+          <li>
+            <a href="#hero" class="hover:text-blue-300 transition">Home</a>
+          </li>
+          <li>
+            <a href="#objective" class="hover:text-blue-300 transition"
+              >Objective</a
+            >
+          </li>
+          <li>
+            <a href="#education" class="hover:text-blue-300 transition"
+              >Education</a
+            >
+          </li>
+          <li>
+            <a href="#skills" class="hover:text-blue-300 transition">Skills</a>
+          </li>
+          <li>
+            <a href="#certifications" class="hover:text-blue-300 transition"
+              >Certifications</a
+            >
+          </li>
+          <li>
+            <a href="#projects" class="hover:text-blue-300 transition"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a href="#soft-skills" class="hover:text-blue-300 transition"
+              >Soft Skills</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="hover:text-blue-300 transition"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <button class="md:hidden" onclick="toggleMenu()">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+      <ul id="mobile-menu" class="md:hidden hidden mt-4 space-y-2">
+        <li>
+          <a href="#hero" class="block hover:text-blue-300 transition">Home</a>
+        </li>
+        <li>
+          <a href="#objective" class="block hover:text-blue-300 transition"
+            >Objective</a
+          >
+        </li>
+        <li>
+          <a href="#education" class="block hover:text-blue-300 transition"
+            >Education</a
+          >
+        </li>
+        <li>
+          <a href="#skills" class="block hover:text-blue-300 transition"
+            >Skills</a
+          >
+        </li>
+        <li>
+          <a href="#certifications" class="block hover:text-blue-300 transition"
+            >Certifications</a
+          >
+        </li>
+        <li>
+          <a href="#projects" class="block hover:text-blue-300 transition"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a href="#soft-skills" class="block hover:text-blue-300 transition"
+            >Soft Skills</a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="block hover:text-blue-300 transition"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="hero"
+      class="hero-bg min-h-screen flex items-center justify-center px-5 pt-20"
+    >
+      <div class="text-center fade-in">
+        <h1 class="text-6xl md:text-7xl font-bold mb-4">Shreyal Y Bangera</h1>
+        <p class="text-xl md:text-2xl mb-6">
+          Aspiring Software Developer | Problem Solver | Tech Enthusiast
+        </p>
+        <p class="text-lg mb-8 max-w-2xl mx-auto">
+          Seeking opportunities to contribute my skills and drive organizational
+          success through innovative solutions.
+        </p>
+        <div
+          class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4"
+        >
+          <a
+            href="mailto:shreyalybangera123@gmail.com"
+            class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105"
+            >Connect with Me</a
+          >
+          <a
+            href="#projects"
+            class="border-2 border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition transform hover:scale-105"
+            >View My Work</a
+          >
+        </div>
+        <div class="flex justify-center space-x-6 mt-8">
+          <a
+            href="https://linkedin.com/in/shreyal-y-bangera"
+            class="text-3xl hover:text-blue-300 transition"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a
+            href="https://github.com/ShreyalBangera"
+            class="text-3xl hover:text-blue-300 transition"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="mailto:shreyalybangera123@gmail.com"
+            class="text-3xl hover:text-blue-300 transition"
+            ><i class="fas fa-envelope"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <main class="max-w-6xl mx-auto px-5 py-20 relative z-10">
+      <section class="mb-20 fade-in" id="objective">
+        <h2 class="text-4xl font-semibold mb-6 border-b-4 border-white pb-2">
+          Objective
+        </h2>
+        <p class="text-xl leading-relaxed">
+          Seeking an opportunity to contribute my skills, adaptability, and
+          problem-solving mindset to drive organizational success. I aim to take
+          on challenging responsibilities, deliver impactful results, and grow
+          alongside a dynamic team while continuously enhancing my knowledge and
+          capabilities.
+        </p>
+      </section>
+
+      <section class="mb-20 fade-in" id="education">
+        <h2 class="text-4xl font-semibold mb-6 border-b-4 border-white pb-2">
+          Education
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div
+            class="bg-white bg-opacity-10 p-6 rounded-xl magic-border hover:shadow-2xl transition"
+          >
+            <h3 class="text-2xl font-bold mb-2">
+              NMAM Institute of Technology, Nitte
+            </h3>
+            <p class="text-lg mb-1">Master of Computer Applications</p>
+            <p class="text-blue-300 font-semibold">CGPA: 9.19 / 10</p>
+            <p class="text-gray-300">2024 – 2026</p>
+          </div>
+          <div
+            class="bg-white bg-opacity-10 p-6 rounded-xl magic-border hover:shadow-2xl transition"
+          >
+            <h3 class="text-2xl font-bold mb-2">
+              Govinda Dasa College, Surathkal
+            </h3>
+            <p class="text-lg mb-1">B.Com in Computer Applications</p>
+            <p class="text-blue-300 font-semibold">CGPA: 9.5 / 10</p>
+            <p class="text-gray-300">2021 – 2024</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-20 fade-in" id="skills">
+        <h2 class="text-4xl font-semibold mb-6 border-b-4 border-white pb-2">
+          Technical Skills
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            class="bg-white bg-opacity-10 p-6 rounded-xl magic-border hover:shadow-2xl transition"
+          >
+            <h3 class="text-xl font-bold mb-3 flex items-center">
+              <i class="fas fa-code text-blue-300 mr-2"></i>Languages
+            </h3>
+            <p>Java, SQL, Python, JavaScript, C, Dart</p>
+          </div>
+          <div
+            class="bg-white bg-opacity-10 p-6 rounded-xl magic-border hover:shadow-2xl transition"
+          >
+            <h3 class="text-xl font-bold mb-3 flex items-center">
+              <i class="fas fa-cogs text-green-300 mr-2"></i>Frameworks
+            </h3>
+            <p>Spring Boot, Node.js, Express.js, React.js</p>
+          </div>
+          <div
+            class="bg-white bg-opacity-10 p-6 rounded-xl magic-border hover:shadow-2xl transition"
+          >
+            <h3 class="text-xl font-bold mb-3 flex items-center">
+              <i class="fas fa-database text-yellow-300 mr-2"></i>Databases
+            </h3>
+            <p>MySQL, PostgreSQL, MongoDB</p>
+          </div>
+          <div
+            class="bg-white bg-opacity-10 p-6 rounded-xl magic-border hover:shadow-2xl transition"
+          >
+            <h3 class="text-xl font-bold mb-3 flex items-center">
+              <i class="fas fa-tools text-red-300 mr-2"></i>Tools
+            </h3>
+            <p>Git, GitHub, Jenkins, GitHub Actions, Docker, Power BI</p>
+          </div>
+          <div
+            class="bg-white bg-opacity-10 p-6 rounded-xl magic-border hover:shadow-2xl transition md:col-span-2 lg:col-span-1"
+          >
+            <h3 class="text-xl font-bold mb-3 flex items-center">
+              <i class="fas fa-brain text-purple-300 mr-2"></i>Concepts
+            </h3>
+            <p>
+              OOP, Data Structures, Algorithms, Microservices, Networking, OS,
+              Cloud
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-20 fade-in" id="certifications">
+        <h2 class="text-4xl font-semibold mb-6 border-b-4 border-white pb-2">
+          Certifications
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            class="bg-white bg-opacity-10 p-4 rounded-xl magic-border hover:shadow-2xl transition text-center"
+          >
+            <i class="fas fa-certificate text-3xl text-blue-300 mb-2"></i>
+            <p class="font-semibold">Data Analytics – Deloitte</p>
+          </div>
+          <div
+            class="bg-white bg-opacity-10 p-4 rounded-xl magic-border hover:shadow-2xl transition text-center"
+          >
+            <i class="fas fa-shield-alt text-3xl text-green-300 mb-2"></i>
+            <p class="font-semibold">Cybersecurity – Deloitte</p>
+          </div>
+          <div
+            class="bg-white bg-opacity-10 p-4 rounded-xl magic-border hover:shadow-2xl transition text-center"
+          >
+            <i class="fas fa-chart-line text-3xl text-yellow-300 mb-2"></i>
+            <p class="font-semibold">Data Science Bootcamp – GeeksforGeeks</p>
+          </div>
+          <div
+            class="bg-white bg-opacity-10 p-4 rounded-xl magic-border hover:shadow-2xl transition text-center"
+          >
+            <i class="fab fa-microsoft text-3xl text-blue-400 mb-2"></i>
+            <p class="font-semibold">Microsoft Azure – Microsoft</p>
+          </div>
+          <div
+            class="bg-white bg-opacity-10 p-4 rounded-xl magic-border hover:shadow-2xl transition text-center"
+          >
+            <i class="fas fa-robot text-3xl text-purple-300 mb-2"></i>
+            <p class="font-semibold">Microsoft AI – Microsoft</p>
+          </div>
+          <div
+            class="bg-white bg-opacity-10 p-4 rounded-xl magic-border hover:shadow-2xl transition text-center"
+          >
+            <i class="fas fa-brain text-3xl text-red-300 mb-2"></i>
+            <p class="font-semibold">Applied AI – Microsoft</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-20 fade-in" id="projects">
+        <h2 class="text-4xl font-semibold mb-6 border-b-4 border-white pb-2">
+          Projects
+        </h2>
+        <div class="space-y-8">
+          <div
+            class="bg-white bg-opacity-10 p-8 rounded-xl magic-border hover:shadow-2xl transition"
+          >
+            <h3 class="text-3xl font-bold mb-4">Vendor Management Portal</h3>
+            <p class="mb-4 text-blue-300">
+              <strong>Technologies:</strong> Flutter, Dart, Firebase, REST, Git
+            </p>
+            <p class="mb-4"><strong>Duration:</strong> Jan 2025 – Present</p>
+            <p class="mb-6">
+              <strong>GitHub:</strong>
+              <a
+                href="https://github.com/ShreyalBangera/vendor-management-app"
+                class="hover:text-blue-300 underline"
+                >View Project</a
+              >
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-lg">
+              <li>
+                Built a mobile-first portal to manage vendors, the products they
+                supply, order history, and ratings.
+              </li>
+              <li>
+                Implemented CRUD for vendor profiles; added feedback/ratings and
+                notes for quick reviews.
+              </li>
+              <li>
+                Flagged inactive vendors automatically based on order recency
+                for periodic follow-ups.
+              </li>
+              <li>
+                Designed REST-backed data flows and offline-friendly UI; secured
+                access with role-based auth.
+              </li>
+              <li>
+                Wrote unit/widget tests and CI checks; documented APIs and
+                release notes.
+              </li>
+            </ul>
+          </div>
+          <div
+            class="bg-white bg-opacity-10 p-8 rounded-xl magic-border hover:shadow-2xl transition"
+          >
+            <h3 class="text-3xl font-bold mb-4">
+              User Activity Monitoring System (UAM)
+            </h3>
+            <p class="mb-4 text-blue-300">
+              <strong>Technologies:</strong> MERN Stack: MongoDB, Express.js,
+              React, Node.js
+            </p>
+            <p class="mb-4"><strong>Duration:</strong> Jan 2025 – Present</p>
+            <p class="mb-6">
+              <strong>GitHub:</strong>
+              <a
+                href="https://github.com/ShreyalBangera/User-Activity-monitor"
+                class="hover:text-blue-300 underline"
+                >View Project</a
+              >
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-lg">
+              <li>
+                Built a secure activity tracking system to monitor user login
+                and logout events.
+              </li>
+              <li>
+                Implemented JWT-based authentication with token expiry and
+                stay-logged-in functionality.
+              </li>
+              <li>
+                Designed RESTful APIs with Node.js and Express.js; used MongoDB
+                aggregations for activity analytics.
+              </li>
+              <li>
+                Added role-based access for stakeholders, and logged IP
+                addresses for enhanced audit trails.
+              </li>
+              <li>
+                Focused on functionality-first approach; scalable for UI
+                enhancements in later stages.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-20 fade-in" id="soft-skills">
+        <h2 class="text-4xl font-semibold mb-6 border-b-4 border-white pb-2">
+          Soft Skills
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div
+            class="bg-white bg-opacity-10 p-6 rounded-xl magic-border hover:shadow-2xl transition"
+          >
+            <i class="fas fa-lightbulb text-3xl text-yellow-300 mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">Problem Solving</h3>
+            <p>Strong analytical thinking and creative solution development</p>
+          </div>
+          <div
+            class="bg-white bg-opacity-10 p-6 rounded-xl magic-border hover:shadow-2xl transition"
+          >
+            <i class="fas fa-comments text-3xl text-blue-300 mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">Communication</h3>
+            <p>Clear articulation with technical and non-technical audiences</p>
+          </div>
+          <div
+            class="bg-white bg-opacity-10 p-6 rounded-xl magic-border hover:shadow-2xl transition"
+          >
+            <i class="fas fa-users text-3xl text-green-300 mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">Collaboration</h3>
+            <p>
+              Effective teamwork in fast-paced, cross-functional environments
+            </p>
+          </div>
+          <div
+            class="bg-white bg-opacity-10 p-6 rounded-xl magic-border hover:shadow-2xl transition"
+          >
+            <i class="fas fa-rocket text-3xl text-purple-300 mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">Continuous Learning</h3>
+            <p>Curiosity and drive for ongoing skill enhancement</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-black bg-opacity-50 py-12 px-5">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Let's Connect</h2>
+        <p class="text-xl mb-8">
+          I'm always open to discussing new opportunities and collaborations.
+        </p>
+        <div
+          class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-8"
+        >
+          <div class="flex items-center">
+            <i class="fas fa-map-marker-alt text-red-400 mr-2"></i>
+            <span>Mangalore, India</span>
+          </div>
+          <div class="flex items-center">
+            <i class="fas fa-envelope text-blue-400 mr-2"></i>
+            <a
+              href="mailto:shreyalybangera123@gmail.com"
+              class="hover:text-blue-300"
+              >shreyalybangera123@gmail.com</a
+            >
+          </div>
+          <div class="flex items-center">
+            <i class="fas fa-phone text-green-400 mr-2"></i>
+            <span>+91-8884459572</span>
+          </div>
+        </div>
+        <div class="flex justify-center space-x-6 mb-8">
+          <a
+            href="https://linkedin.com/in/shreyal-y-bangera"
+            class="text-3xl hover:text-blue-300 transition"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a
+            href="https://github.com/ShreyalBangera"
+            class="text-3xl hover:text-blue-300 transition"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="mailto:shreyalybangera123@gmail.com"
+            class="text-3xl hover:text-blue-300 transition"
+            ><i class="fas fa-envelope"></i
+          ></a>
+        </div>
+        <p class="text-gray-400">
+          &copy; 2025 Shreyal Y Bangera. All rights reserved.
+        </p>
+      </div>
+    </footer>
+        <script>
+      function createParticles() {
+        const particlesContainer = document.getElementById("particles");
+        for (let i = 0; i < 50; i++) {
+          const particle = document.createElement("div");
+          particle.className = "particle";
+          particle.style.left = Math.random() * 100 + "%";
+          particle.style.animationDelay = Math.random() * 6 + "s";
+          particlesContainer.appendChild(particle);
+        }
+      }
+
+      // Fade-in animation on scroll
+      function setupFadeIn() {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        document.querySelectorAll(".fade-in").forEach((el) => {
+          observer.observe(el);
+        });
+      }
+
+      // Toggle mobile menu
+      function toggleMenu() {
+        const menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("hidden");
+      }
+
+      // Smooth scrolling for navigation links
+      function setupSmoothScrolling() {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+              // Close mobile menu if open
+              const menu = document.getElementById("mobile-menu");
+              if (!menu.classList.contains("hidden")) {
+                menu.classList.add("hidden");
+              }
+            }
+          });
+        });
+      }
+
+      // Initialize
+      document.addEventListener("DOMContentLoaded", () => {
+        createParticles();
+        setupFadeIn();
+        setupSmoothScrolling();
+      });
+    </script>
+  </body>
+</html>
